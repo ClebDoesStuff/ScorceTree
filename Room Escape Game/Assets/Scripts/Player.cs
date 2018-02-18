@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
     Rigidbody2D myRigidbody2D;
+    private Animator animation;
 
     public float speed = 10;
     private bool facingRight = true;
@@ -14,6 +15,7 @@ public class Player : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         myRigidbody2D = GetComponent<Rigidbody2D>();
+        animation = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -22,6 +24,7 @@ public class Player : MonoBehaviour {
         float horizontal = Input.GetAxis("Horizontal");
 
         transform.Translate(Time.deltaTime * (speed * horizontal), 0, 0);
+        animation.SetFloat("speed", Mathf.Abs(horizontal));
 
         Flip(horizontal);
         _Input();
@@ -48,6 +51,7 @@ public class Player : MonoBehaviour {
 
     void Jump()
     {
-        myRigidbody2D.AddForce(new Vector2(0, jumpForce));
+        myRigidbody2D.AddForce(new Vector2(0, jumpForce));        
+        animation.SetTrigger("jump");
     }
 }

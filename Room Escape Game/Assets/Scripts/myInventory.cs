@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Inventory : MonoBehaviour {
+public class myInventory : MonoBehaviour {
 
     public GameObject[] inventory = new GameObject[10];
     public Button[] InvButtons = new Button[10];
@@ -27,7 +27,7 @@ public class Inventory : MonoBehaviour {
         }
         //inventory was full
         if (!itemAdded){
-            Debug.Log("Inventory is full");
+            Debug.Log("myInventory is full");
         }
     }
 

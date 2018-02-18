@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,7 +7,7 @@ public class PlayerInteract : MonoBehaviour {
 
     public GameObject currentInterObj = null;
     public ItemTake currentInterObjScript = null;
-    public Inventory inventory;
+    public myInventory inventory;
 
     private void Update()
     {
